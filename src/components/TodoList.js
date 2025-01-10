@@ -1,7 +1,10 @@
 import React from 'react'
 import TodoItem from './TodoItem'
+import { useTodos } from '../TodoContext'
 
-function TodoList ({ todos, filter, toggleTodo, deleteTodo}) {
+function TodoList () {
+
+    const { todos, filter } = useTodos()
 
     const filteredTodos = todos.filter(todo => {
         if (filter == 'completed') { return todo.isCompleted }
@@ -15,8 +18,6 @@ function TodoList ({ todos, filter, toggleTodo, deleteTodo}) {
                 <TodoItem
                     key = {todo.key}
                     todo = {todo}
-                    deleteTodo={deleteTodo}
-                    toggleTodo={toggleTodo}
                 />
             ))}
         </ul>

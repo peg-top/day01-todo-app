@@ -1,6 +1,9 @@
 import React from 'react'
+import { useTodos } from '../TodoContext'
 
-function TodoItem ({ todo, toggleTodo, deleteTodo }) {
+function TodoItem ({ todo }) {
+
+    const { toggleTodo, deleteTodo } = useTodos()
 
     return (
         <li className='list-group-item'>

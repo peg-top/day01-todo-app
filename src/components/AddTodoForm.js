@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useTodos } from '../TodoContext'
 
-function AddTodoForm ({ addTodo }) {
+function AddTodoForm () {
 
     const [text, setText] = useState('')
+    
+    const { addTodo } = useTodos()
 
     const handleSubmit = (e) => {  
         e.preventDefault()

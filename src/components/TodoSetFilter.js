@@ -1,6 +1,10 @@
 import React from 'react'
+import { useTodos } from '../TodoContext'
 
-function TodoSetFilter({ filter, addFilter }) {
+function TodoSetFilter() {
+
+    const {filter, addFilter} = useTodos()
+
     return (
         <div>
             <button onClick={() => addFilter('all')} disabled={filter == 'all'}>All</button>
