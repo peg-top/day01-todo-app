@@ -28,12 +28,14 @@ export function TodoProvider ({ children }) {
       }
     
       const addFilter = filter => {
+        console.log('Current filter:', filter); 
         setFilter(filter)
+        console.log('New filter:', filter); 
       }
 
 
     return(
-        <TodoContext.Provider value={{ todos, addTodo, toggleTodo, deleteTodo, addFilter }}>
+        <TodoContext.Provider value={{ todos, addTodo, toggleTodo, deleteTodo, addFilter, filter }}>
             {children}
         </TodoContext.Provider>
     )
