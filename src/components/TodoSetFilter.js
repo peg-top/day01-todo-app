@@ -5,8 +5,6 @@ function TodoSetFilter() {
 
     const {filter, addFilter} = useTodos()
 
-    console.log('set filter', filter)
-
     return (
         <div>
             <button onClick={() => addFilter('all')} disabled={filter === 'all'}>All</button>

@@ -3,19 +3,28 @@ import { useTodos } from '../TodoContext'
 
 function TodoItem ({ todo }) {
 
-    const { toggleTodo, deleteTodo } = useTodos()
+    const { toggleTodo, deleteTodo, changeEditedID } = useTodos()
+
+    
 
     return (
-        <li className='list-group-item'>
+        <li>
             <span
                 style={{ color: todo.isCompleted ? 'red' : 'black' }}
-                onClick={() => toggleTodo(todo.key)}
+                onClick={() => {
+                    toggleTodo(todo.id)
+                    changeEditedID(null)
+                }}
             >
                 { todo.text }
             </span>
             <button
-                className='btn btn-danger btn-sm'
-                onClick={() => deleteTodo(todo.key)}
+                onClick={() => changeEditedID(todo.id)}
+            >
+                Edit
+            </button>
+            <button
+                onClick={() => deleteTodo(todo.id)}
             >
                 Delete
             </button>

@@ -20,7 +20,7 @@ function AddTodoForm () {
             <input type="text" value={text} placeholder='Add a new task'
                 onChange={e => {setText(e.target.value)}}
             />
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit">Submit</button>
         </form>
     )
 }
